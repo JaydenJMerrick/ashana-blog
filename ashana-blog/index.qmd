@@ -1,0 +1,39 @@
+---
+title: "Ashana's blog"
+listing:
+  contents: posts
+  type: default
+  sort: "date desc"
+  max-items: 5
+---
+
+```{=html}
+<form id="blogForm" style="max-width: 500px; background: #f8f9fa; padding: 20px; border-radius: 8px; border: 1px solid #dee2e6; margin-bottom: 30px;">
+  <div style="margin-bottom: 15px;">
+    <label for="postTitle" style="display: block; font-weight: bold; margin-bottom: 5px;">Title:</label>
+    <input type="text" id="postTitle" name="title" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+  </div>
+
+  <div style="margin-bottom: 15px;">
+    <label for="postBody" style="display: block; font-weight: bold; margin-bottom: 5px;">Blog Content:</label>
+    <textarea id="postBody" name="body" rows="6" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;"></textarea>
+  </div>
+
+  <div style="margin-bottom: 15px;">
+    <label for="postTag" style="display: block; font-weight: bold; margin-bottom: 5px;">Tag:</label>
+    <select id="postTag" name="tag" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+      <option value="General">General</option>
+      <option value="Random">Random</option>
+      <option value="Shower Thoughts">Shower Thoughts</option>
+      <option value="Self Help">Self Help</option>
+    </select>
+  </div>
+
+  <button type="submit" id="submitBtn" style="background-color: #0d6efd; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Submit Post</button>
+</form>
+
+<p id="statusMessage" style="font-weight: bold; margin-top: 10px;"></p>
+
+<script src="create-post.js"></script>
+   </div>
+```
