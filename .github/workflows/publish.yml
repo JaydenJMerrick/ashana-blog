@@ -3,6 +3,7 @@ name: Process Issue into Post and Deploy
 on:
   issues:
     types: [opened, labeled]
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -16,8 +17,8 @@ concurrency:
 
 jobs:
   build-and-deploy:
-    # Only run if the issue has the 'blog-post' label
-    if: contains(github.event.issue.labels.*.name, 'blog-post')
+    # Run if triggered manually OR if an issue has the 'blog-post' label
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.issue.labels.*.name, 'blog-post')
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -27,20 +28,18 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Extract Post Data and Create .qmd File
+        if: github.event_name == 'issues'
         run: |
           TITLE="${{ github.event.issue.title }}"
           FULL_BODY='${{ github.event.issue.body }}'
 
-          # Parse the Tag and Content out of the Issue body
           TAG=$(echo "$FULL_BODY" | sed -n '/---TAG---/,/---CONTENT---/p' | sed '1d;$d' | xargs)
           BODY=$(echo "$FULL_BODY" | sed -n '/---CONTENT---/,$p' | tail -n +2)
 
-          # Default to General if tag is missing
           if [ -z "$TAG" ]; then
             TAG="General"
           fi
 
-          # Convert tag to folder slug
           SLUG=$(echo "$TAG" | tr '[:upper:]' '[:lower:]' | tr ' ' '-')
           FILENAME="posts/$SLUG/post-$(date +%s).qmd"
 
@@ -57,6 +56,7 @@ jobs:
           EOF
 
       - name: Commit New Post to Repository
+        if: github.event_name == 'issues'
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
@@ -65,6 +65,7 @@ jobs:
           git push
 
       - name: Close the Issue Automatically
+        if: github.event_name == 'issues'
         run: |
           gh issue close ${{ github.event.issue.number }} --comment "Post processed and live build started!"
         env:
