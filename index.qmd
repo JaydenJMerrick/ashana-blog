@@ -43,8 +43,8 @@ document.getElementById('blogForm').addEventListener('submit', function(e) {
   // Format the issue body to store content and tag cleanly
   const issueBody = encodeURIComponent(`---TAG---\n${tag}\n---CONTENT---\n${rawBody}`);
 
-  // Redirect to GitHub Issue creation page
-  const issueUrl = `[https://github.com/JaydenJMerrick/ashana-blog/issues/new?title=$](https://github.com/JaydenJMerrick/ashana-blog/issues/new?title=$){title}&body=${issueBody}&labels=blog-post`;
+  // Make sure your username and repo name match EXACTLY (case-sensitive!)
+  const issueUrl = `https://github.com/JaydenJMerrick/ashana-blog/issues/new?title=${title}&body=${issueBody}&labels=blog-post`;
   window.location.href = issueUrl;
 });
 </script>
