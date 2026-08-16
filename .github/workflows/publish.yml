@@ -2,7 +2,7 @@ name: Process Issue into Post and Deploy
 
 on:
   issues:
-    types: [opened, labeled]
+    types: [opened]
   workflow_dispatch:
 
 permissions:
