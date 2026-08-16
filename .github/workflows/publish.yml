@@ -1,0 +1,86 @@
+name: Process Issue into Post and Deploy
+
+on:
+  issues:
+    types: [opened, labeled]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  issues: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    # Only run if the issue has the 'blog-post' label
+    if: contains(github.event.issue.labels.*.name, 'blog-post')
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Extract Post Data and Create .qmd File
+        run: |
+          TITLE="${{ github.event.issue.title }}"
+          FULL_BODY='${{ github.event.issue.body }}'
+
+          # Parse the Tag and Content out of the Issue body
+          TAG=$(echo "$FULL_BODY" | sed -n '/---TAG---/,/---CONTENT---/p' | sed '1d;$d' | xargs)
+          BODY=$(echo "$FULL_BODY" | sed -n '/---CONTENT---/,$p' | tail -n +2)
+
+          # Default to General if tag is missing
+          if [ -z "$TAG" ]; then
+            TAG="General"
+          fi
+
+          # Convert tag to folder slug
+          SLUG=$(echo "$TAG" | tr '[:upper:]' '[:lower:]' | tr ' ' '-')
+          FILENAME="posts/$SLUG/post-$(date +%s).qmd"
+
+          mkdir -p "posts/$SLUG"
+
+          cat <<EOF > "$FILENAME"
+          ---
+          title: "$TITLE"
+          date: "$(date +%Y-%m-%d)"
+          categories: ["$TAG"]
+          ---
+
+          $BODY
+          EOF
+
+      - name: Commit New Post to Repository
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+          git add posts/
+          git diff --staged --quiet || git commit -m "Add post from Issue #${{ github.event.issue.number }}"
+          git push
+
+      - name: Close the Issue Automatically
+        run: |
+          gh issue close ${{ github.event.issue.number }} --comment "Post processed and live build started!"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Render Quarto Site
+        uses: quarto-dev/quarto-actions/render@v2
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
