@@ -1,0 +1,27 @@
+project:
+  type: website
+
+website:
+  title: "ashana-blog"
+  search: false # Turns off search
+  navbar:
+    left:
+      - href: posts/general/index.qmd
+        text: General
+      - href: posts/random/index.qmd
+        text: Random
+      - href: posts/shower-thoughts/index.qmd
+        text: Shower Thoughts
+      - href: posts/self-help/index.qmd
+        text: Self Help
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+
+editor: visual
+
