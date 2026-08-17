@@ -1,0 +1,21 @@
+[
+  {
+    "listing": "/posts/shower-thoughts/index.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/random/index.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/general/index.html",
+    "items": [
+      "/posts/general/test.html",
+      "/posts/general/test2.html"
+    ]
+  },
+  {
+    "listing": "/posts/self-help/index.html",
+    "items": []
+  }
+]

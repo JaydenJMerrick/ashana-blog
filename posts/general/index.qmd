@@ -1,11 +1,19 @@
 ---
 title: "General Posts"
 format: html
+page-layout: custom
+sidebar: false
+toc: false
 listing:
-  contents: "."
-  type: default
-  categories: false
+  contents: 
+    - "*.qmd"
+    - "!index.qmd"
+  sort: "date desc"
+  fields: [title, description, date]
   include:
     categories: "General"
 ---
 
+<div class="centered-content">
+
+</div>

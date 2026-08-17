@@ -1,0 +1,6 @@
+---
+title: "Your Own Blog"
+date: "2026-08-16"
+categories: ["General"]
+---
+Hi!! Welcome to your blog! In order to post, just fill out the post form above. The page will go automatically fill out a GitHub “Issue”, which you can just submit! Posts should update after a few minutes :) 

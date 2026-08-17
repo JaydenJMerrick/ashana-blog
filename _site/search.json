@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "posts/shower-thoughts/index.html",
+    "href": "posts/shower-thoughts/index.html",
+    "title": "Shower Thoughts",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
+    "objectID": "posts/random/index.html",
+    "href": "posts/random/index.html",
+    "title": "Random",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
+    "objectID": "posts/general/test.html",
+    "href": "posts/general/test.html",
+    "title": "Your Own Blog",
+    "section": "",
+    "text": "Hi!! Welcome to your blog! In order to post, just fill out the post form above. The page will go automatically fill out a GitHub “Issue”, which you can just submit! Posts should update after a few minutes :)"
+  },
+  {
+    "objectID": "posts/general/test2.html",
+    "href": "posts/general/test2.html",
+    "title": "A Quick Note on Quatro’s Stylistic Ability",
+    "section": "",
+    "text": "Often science and STEM is seen as naturally “above” art and style. We make fun of those who take their fashion TOO seriously, but never a burnt out scientist! An artists with no job is a bum, a scientist with no lab is just a shame. But when you remove art from the world, suddenly people have complaints. Thus, Let me introduce Quarto- an easy and effective way to produce webpages from R. R already has a heavy connect to HTML, as producing scientific graphs for file export. But- many use Quarto to have a website portfolio. After all, graphs can be easily added. But as I produce this website, I see the sacrifice Quarto has in style. It has the mentality that all users wish to use a template, which makes issues for producing stylistic websites. I love web design, so having such limited control is frustrating! I say that science should be accessible. So if we only allow the most white-boring and plain design, we must understand that turns people away from the data that matters!"
+  },
+  {
+    "objectID": "posts/self-help/index.html",
+    "href": "posts/self-help/index.html",
+    "title": "Self Help",
+    "section": "",
+    "text": "No matching items"
+  }
+]

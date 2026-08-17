@@ -1,0 +1,6 @@
+---
+title: "A Quick Note on Quatro's Stylistic Ability "
+date: "2026-08-16"
+categories: ["General"]
+---
+Often science and STEM is seen as naturally "above" art and style. We make fun of those who take their fashion TOO seriously, but never a burnt out scientist! An artists with no job is a bum, a scientist with no lab is just a shame. But when you remove art from the world, suddenly people have complaints. Thus, Let me introduce Quarto- an easy and effective way to produce webpages from R. R already has a heavy connect to HTML, as producing scientific graphs for file export. But- many use Quarto to have a website portfolio. After all, graphs can be easily added. But as I produce this website, I see the sacrifice Quarto has in style. It has the mentality that all users wish to use a template, which makes issues for producing stylistic websites. I love web design, so having such limited control is frustrating! I say that science should be accessible. So if we only allow the most white-boring and plain design, we must understand that turns people away from the data that matters! 

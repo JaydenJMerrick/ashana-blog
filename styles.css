@@ -4,6 +4,8 @@
 
 body {
   background-color: #f7e5e3; /* Background for all pages */
+  color: #7d3028; 
+  text-align: center;
 }
 
 .navbar-title { 
@@ -18,6 +20,11 @@ body {
   color: #bfaba9 !important;
 }
 
+.title{
+    font-family: 'Niconne', cursive;
+    font-size: 5rem;
+}
+
 .navbar-nav .nav-link {
   font-family: "Libre Baskerville", serif;
   font-weight: 500;
@@ -26,6 +33,7 @@ body {
   background-color: #7d3028;
   margin-left: 10px;
   transition: 0.5s;
+  border-radius: 5px;
 }
 
 .navbar-nav .nav-link:hover {
@@ -109,8 +117,12 @@ body {
   margin-left: auto !important;  /* Equal left margin */
   margin-right: auto !important; /* Equal right margin */
   padding: 0 20px;               /* Side padding for mobile screens */
+  font-family: "Libre Baskerville", serif;
 }
 
+.centered-content h1{
+    margin-top: 5px;
+}
 /* Ensure forms and inputs fill the centered container nicely */
 .centered-content form {
   width: 100%;
@@ -122,4 +134,92 @@ body {
 .centered-content select {
   width: 100%;
   box-sizing: border-box;
+}
+
+.navbar-nav .nav-link.active {
+  color: #7d3028 !important; /* Set to your normal link color */
+  background-color: #fafafa;
+  font-weight: 700;           /* Optional: keep it slightly bold so you still know where you are */
+  border: 2px solid  #d1a7a3;
+}
+
+/* ==========================================================================
+   CENTERED POST CARD WITH FLOWER IMAGE AT TOP
+   ========================================================================== */
+
+/* 1. Main Card Container */
+.quarto-post {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 35px 25px 25px 25px;
+  margin: 0 auto 30px auto;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f0f0f0;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  position: relative;
+}
+
+/* 2. Flower Image at the Very Top (Order 1) */
+.quarto-post::before {
+  content: "";
+  display: block;
+  margin-bottom: -51px;
+  width: 120px;                       /* Adjust image width */
+  height: 120px;                      /* Adjust image height */
+  background-image: url('images/pretty-flower.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  order: 1 !important;               /* Forces image to stay at the very top */
+}
+
+/* 3. Title (Order 2) */
+.quarto-post .title {
+  font-family: 'Cinzel', serif, sans-serif;
+  font-size: 1.6rem !important;
+  font-weight: 700;
+  color: #ab9f9e !important;
+  text-decoration: none;
+  order: 2 !important;
+}
+
+/* 4. Post Context / Description (Order 3) */
+.quarto-post .body,
+.quarto-post .entry-content,
+.quarto-post .description {
+  font-family: 'Work Sans', sans-serif;
+  color: #ab9f9e;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 15px !important;
+  width: 100% !important;
+  order: 3 !important;
+}
+.quarto-post .body p,
+.quarto-post .entry-content p,
+.quarto-post .description p,
+.quarto-post p {
+  text-align: left !important;
+}
+/* 5. Date at the Very Bottom (Order 4) */
+.quarto-post .metadata,
+.quarto-post .listing-date,
+.quarto-post .metadata-listing {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.85rem;
+  color: #ab9f9e;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  float: none !important;
+  display: block !important;
+  margin-top: 0; !important;
+  order: 4 !important;
+}
+
+.btn-submit:hover{
+    background-color: #d1a7a3;
 }
