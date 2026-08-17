@@ -1,51 +1,68 @@
 ---
-title: "Ashana's blog"
-listing:
-  contents: posts
-  type: default
-  sort: "date desc"
-  max-items: 5
+title: ""
+title-block-style: none
+page-layout: custom
+sidebar: false
+toc: false
 ---
 
 ```{=html}
-<form id="blogForm" style="max-width: 500px; background: #f8f9fa; padding: 20px; border-radius: 8px; border: 1px solid #dee2e6; margin-bottom: 30px;">
-  <div style="margin-bottom: 15px;">
-    <label for="postTitle" style="display: block; font-weight: bold; margin-bottom: 5px;">Title:</label>
-    <input type="text" id="postTitle" name="title" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+<div class="hero-banner">
+  <!-- Background Image -->
+  <img src="images/index-background.png" class="hero-bg" alt="Hero background">
+  
+  <!-- Content Overlay -->
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <span class="hero-text">Blog.</span>
+      <img src="images/blogger.png" class="hero-side-img" alt="Side icon">
+    </div>
   </div>
+</div>
+```
 
-  <div style="margin-bottom: 15px;">
-    <label for="postBody" style="display: block; font-weight: bold; margin-bottom: 5px;">Blog Content:</label>
-    <textarea id="postBody" name="body" rows="6" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;"></textarea>
-  </div>
-
-  <div style="margin-bottom: 15px;">
-    <label for="postTag" style="display: block; font-weight: bold; margin-bottom: 5px;">Tag:</label>
-    <select id="postTag" name="tag" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
-      <option value="General">General</option>
-      <option value="Random">Random</option>
-      <option value="Shower Thoughts">Shower Thoughts</option>
-      <option value="Self Help">Self Help</option>
-    </select>
-  </div>
-
-  <button type="submit" style="background-color: #0d6efd; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Submit Post</button>
-</form>
-
-<script>
-document.getElementById('blogForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-
-  const title = encodeURIComponent(document.getElementById('postTitle').value);
-  const rawBody = document.getElementById('postBody').value;
-  const tag = document.getElementById('postTag').value;
-
-  // Format the issue body to store content and tag cleanly
-  const issueBody = encodeURIComponent(`---TAG---\n${tag}\n---CONTENT---\n${rawBody}`);
-
-  // Make sure your username and repo name match EXACTLY (case-sensitive!)
-  const issueUrl = `https://github.com/JaydenJMerrick/ashana-blog/issues/new?title=${title}&body=${issueBody}&labels=blog-post`;
-  window.location.href = issueUrl;
-});
-</script>
+```{=html}
+<!-- Centered Page Wrapper -->
+<div class="centered-content">
+    <form id="blogForm" style="max-width: 800px; background: #ffffff; padding: 20px; margin-bottom: 30px;">
+      <div style="margin-bottom: 15px;">
+        <label for="postTitle" style="display: block; font-weight: bold; margin-bottom: 5px;">Title:</label>
+        <input type="text" id="postTitle" name="title" required style="width: 100%; padding: 8px; background-color: #f1f1f1; border: none !important; outline: none !important; box-sizing: border-box;">
+      </div>
+    
+      <div style="margin-bottom: 15px;">
+        <label for="postBody" style="display: block; font-weight: bold; margin-bottom: 5px;">Blog Content:</label>
+        <textarea id="postBody" name="body" rows="6" required style="width: 100%; padding: 8px; background-color: #f1f1f1; border: none !important; outline: none !important; box-sizing: border-box;"></textarea>
+      </div>
+    
+      <div style="margin-bottom: 15px;">
+        <label for="postTag" style="display: block; font-weight: bold; margin-bottom: 5px;">Tag:</label>
+        <select id="postTag" name="tag" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+          <option value="General">General</option>
+          <option value="Random">Random</option>
+          <option value="Shower Thoughts">Shower Thoughts</option>
+          <option value="Self Help">Self Help</option>
+        </select>
+      </div>
+    
+      <button type="submit" style="background-color: #0d6efd; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Submit Post</button>
+    </form>
+    
+    <script>
+    document.getElementById('blogForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+    
+      const title = encodeURIComponent(document.getElementById('postTitle').value);
+      const rawBody = document.getElementById('postBody').value;
+      const tag = document.getElementById('postTag').value;
+    
+      // Format the issue body to store content and tag cleanly
+      const issueBody = encodeURIComponent(`---TAG---\n${tag}\n---CONTENT---\n${rawBody}`);
+    
+      // Make sure your username and repo name match EXACTLY (case-sensitive!)
+      const issueUrl = `https://github.com/JaydenJMerrick/ashana-blog/issues/new?title=${title}&body=${issueBody}&labels=blog-post`;
+      window.location.href = issueUrl;
+    });
+    </script>
+</div>
 ```
