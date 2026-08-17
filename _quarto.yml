@@ -3,6 +3,7 @@ project:
 
 website:
   title: "Ashana's Blog"
+  favicon: images/favicon.png
   search: false # Turns off search
   navbar:
     right:
