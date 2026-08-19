@@ -1,5 +1,5 @@
 ---
-title: "Shower Thoughts"
+title: "The Bluest Eye"
 format: html
 page-layout: custom
 sidebar: false
@@ -11,7 +11,7 @@ listing:
   sort: "date desc"
   fields: [title, description, date]
   include:
-    categories: "Shower Thoughts"
+    categories: "The Bluest Eye"
 ---
 
 ::: centered-content

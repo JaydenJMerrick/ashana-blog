@@ -15,7 +15,7 @@ toc: false
   <div class="hero-overlay">
     <div class="hero-content">
       <span class="hero-text">Blog.</span>
-      <img src="images/blogger.png" class="hero-side-img" alt="Side icon">
+      <a href="https://github.com/JaydenJMerrick/ashana-blog"><img src="images/blogger.png" class="hero-side-img" alt="Side icon"></a>
     </div>
   </div>
 </div>
@@ -42,6 +42,7 @@ toc: false
           <option value="Random">Random</option>
           <option value="Shower Thoughts">Shower Thoughts</option>
           <option value="Self Help">Self Help</option>
+          <option value="The Bluest Eye">The Bluest Eye</option>
         </select>
       </div>
     

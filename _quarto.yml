@@ -2,19 +2,22 @@ project:
   type: website
 
 website:
-  title: "Ashana's Blog"
+  title: "AHHHHHHhsana"
   favicon: images/favicon.png
   search: false # Turns off search
   navbar:
     right:
       - href: posts/general/index.qmd
-        text: General
+        text: "<span class='tag-btn'>General</span>"
       - href: posts/random/index.qmd
-        text: Random Shit
+        text: "<span class='tag-btn'>Random</span>"
       - href: posts/shower-thoughts/index.qmd
-        text: Shower Thoughts
+        text: "<span class='tag-btn'>Shower Thoughts</span>"
       - href: posts/self-help/index.qmd
-        text: Self Help
+        text: "<span class='tag-btn'>Self Help</span>"
+    left:
+      - href: posts/bluest-eye/index.qmd
+        text: "<span class='book-btn'>The Bluest Eye</span>"
 
 format:
   html:
