@@ -8,13 +8,13 @@ website:
   navbar:
     right:
       - href: posts/general/index.qmd
-        text: "<span class='tag-btn'>General</span>"
+        text: General
       - href: posts/random/index.qmd
-        text: "<span class='tag-btn'>Random</span>"
+        text: Random Shit
       - href: posts/shower-thoughts/index.qmd
-        text: "<span class='tag-btn'>Shower Thoughts</span>"
+        text: Shower Thoughts
       - href: posts/self-help/index.qmd
-        text: "<span class='tag-btn'>Self Help</span>"
+        text: Self Help
     left:
       - href: posts/bluest-eye/index.qmd
         text: "<span class='book-btn'>The Bluest Eye</span>"
